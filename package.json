@@ -1,7 +1,7 @@
 {
     "name": "fonttools",
     "displayName": "FontTools",
-    "description": "",
+    "description": "Support for font development tools",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.58.0"
