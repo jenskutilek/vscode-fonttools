@@ -1,2 +1,7 @@
 node_modules
 *.vsix
+/out/
+/.vs/
+tsconfig.lsif.json
+*.lsif
+*.db
