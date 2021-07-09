@@ -1,3 +1,4 @@
+// https://stackoverflow.com/questions/46045245/how-to-enable-go-to-symbol-with-a-custom-language-in-vscode/46054953#46054953
 'use strict';
 import * as vscode from 'vscode';
 
@@ -20,7 +21,7 @@ class FooDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                         name: line.text.substr(1),
                         kind: vscode.SymbolKind.Field,
                         location: new vscode.Location(document.uri, line.range)
-                    })
+                    });
                 }
             }
 
