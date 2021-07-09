@@ -50,7 +50,7 @@
             },
             "patterns": [
                 {
-                    "include": "meta.embedded.block.assembly"
+                    "include": "source.assembly"
                 }
             ]
         },
