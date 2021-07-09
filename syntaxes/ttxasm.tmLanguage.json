@@ -5,20 +5,27 @@
     ], 
     "patterns": [
         {
-            "include": "#AsmInstruction"
-        },
-        {
-            "include": "#AsmComment"
-        },
-        {
-            "include": "#AsmParams"
-        },
-        {
-            "include": "#AsmNumbers"
+            "include": "#assembly"
         }
-    ], 
+    ],
     "scopeName": "source.assembly", 
     "repository": {
+        "assembly": {
+            "patterns": [
+                {
+                    "include": "#AsmInstruction"
+                },
+                {
+                    "include": "#AsmComment"
+                },
+                {
+                    "include": "#AsmParams"
+                },
+                {
+                    "include": "#AsmNumbers"
+                }
+            ]
+        },
         "AsmInstruction": {
             "name": "keyword.assembly",
             "match": "\\b[A-Z][A-Z0-9]+\\b"
