@@ -13,6 +13,9 @@
         "assembly": {
             "patterns": [
                 {
+                    "include": "#AsmConditional"
+                },
+                {
                     "include": "#AsmInstruction"
                 },
                 {
@@ -30,6 +33,10 @@
             "name": "keyword.assembly",
             "match": "\\b[A-Z][A-Z0-9]+\\b"
         },
+        "AsmConditional": {
+            "name": "keyword.control.conditional.assembly",
+            "match": "\\b(IF|ELSE|EIF)\\b"
+        },
         "AsmComment": {
             "name": "comment.block.assembly",
             "begin": "\/\\*",
@@ -46,22 +53,22 @@
             }
         },
         "AsmParams": {
-            "name": "meta.tag.parameters.assembly",
+            "name": "constant.numeric.integer.binary.assembly",
             "begin": "\\[",
             "beginCaptures": {
                 "0": {
-                    "name": "meta.tag.parameters.begin.assembly"
+                    "name": "punctuation.section.brackets.begin.assembly"
                 }
             },
             "end": "\\]",
             "endCaptures": {
                 "0": {
-                    "name": "meta.tag.parameters.end.assembly"
+                    "name": "punctuation.section.brackets.end.assembly"
                 }
             }
         },
         "AsmNumbers": {
-            "name": "constant.numeric.assembly",
+            "name": "constant.numeric.integer.assembly",
             "match": "\\b[0-9]+\\b"
         }
     }, 
