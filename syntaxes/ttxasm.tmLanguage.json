@@ -1,0 +1,62 @@
+{
+    "name": "TTX Assembly", 
+    "fileTypes": [
+        "ttxasm"
+    ], 
+    "patterns": [
+        {
+            "include": "#AsmInstruction"
+        },
+        {
+            "include": "#AsmComment"
+        },
+        {
+            "include": "#AsmParams"
+        },
+        {
+            "include": "#AsmNumbers"
+        }
+    ], 
+    "scopeName": "source.assembly", 
+    "repository": {
+        "AsmInstruction": {
+            "name": "keyword.assembly",
+            "match": "\\b[A-Z][A-Z0-9]+\\b"
+        },
+        "AsmComment": {
+            "name": "comment.block.assembly",
+            "begin": "\/\\*",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.comment.begin.assembly"
+                }
+            },
+            "end": "\\*\/",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.comment.end.assembly"
+                }
+            }
+        },
+        "AsmParams": {
+            "name": "meta.tag.parameters.assembly",
+            "begin": "\\[",
+            "beginCaptures": {
+                "0": {
+                    "name": "meta.tag.parameters.begin.assembly"
+                }
+            },
+            "end": "\\]",
+            "endCaptures": {
+                "0": {
+                    "name": "meta.tag.parameters.end.assembly"
+                }
+            }
+        },
+        "AsmNumbers": {
+            "name": "constant.numeric.assembly",
+            "match": "\\b[0-9]+\\b"
+        }
+    }, 
+    "uuid": "94ac686e-d811-47ff-80a2-9a9552a7414e"
+}

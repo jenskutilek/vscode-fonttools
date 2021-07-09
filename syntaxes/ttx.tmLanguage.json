@@ -1,0 +1,65 @@
+{
+    "name": "TTX", 
+    "fileTypes": [
+        "ttx"
+    ], 
+    "patterns": [
+        {
+            "name": "text.xml.ttx.sfnttable",
+            "match": "(<)(GlyphOrder|[A-Za-z0-9_ ]{4})(>)",
+            "captures": {
+                "1": {
+                    "name": "punctuation.definition.tag.begin.xml"
+                },
+                "2": {
+                    "name": "entity.name.tag.localname.xml"
+                },
+                "3": {
+                    "name": "punctuation.definition.tag.end.xml"
+                }
+            }
+        },
+        {
+            "name": "meta.embedded.block.assembly",
+            "begin": "(<)(assembly)(>)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.begin.xml"
+                },
+                "2": {
+                    "name": "entity.name.tag.localname.xml"
+                },
+                "3": {
+                    "name": "punctuation.definition.tag.end.xml"
+                }
+            }, 
+            "end": "(<)(/)(assembly)(>)",
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.begin.xml"
+                },
+                "2": {
+                    "name": "punctuation.definition.tag.xml"
+                },
+                "3": {
+                    "name": "entity.name.tag.localname.xml"
+                },
+                "4": {
+                    "name": "punctuation.definition.tag.end.xml"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "meta.embedded.block.assembly"
+                }
+            ]
+        },
+        {
+            "include": "text.xml"
+        }
+    ], 
+    "scopeName": "text.xml.ttx", 
+    "repository": {
+    }, 
+    "uuid": "cdcc30e1-a5b3-4bd2-af4c-832a172d1525"
+}
