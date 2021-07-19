@@ -5,21 +5,6 @@
     ], 
     "patterns": [
         {
-            "name": "text.xml.ttx.sfnttable",
-            "match": "(<)(GlyphOrder|[A-Za-z0-9_ ]{4})(>)",
-            "captures": {
-                "1": {
-                    "name": "punctuation.definition.tag.begin.xml"
-                },
-                "2": {
-                    "name": "entity.name.tag.localname.xml"
-                },
-                "3": {
-                    "name": "punctuation.definition.tag.end.xml"
-                }
-            }
-        },
-        {
             "name": "meta.embedded.block.assembly",
             "begin": "(<)(assembly)(>)",
             "beginCaptures": {
