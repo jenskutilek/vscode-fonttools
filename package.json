@@ -2,7 +2,15 @@
     "name": "fonttools",
     "displayName": "FontTools",
     "description": "Support for font development tools",
-    "version": "0.0.1",
+    "publisher": "jenskutilek",
+    "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jenskutilek/vscode-fonttools"
+    },
+    "bugs": {
+        "url": "https://github.com/jenskutilek/vscode-fonttools/issues"
+    },
     "engines": {
         "vscode": "^1.58.0"
     },
