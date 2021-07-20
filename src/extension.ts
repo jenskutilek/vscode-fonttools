@@ -27,6 +27,16 @@ class TtxDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                         kind: vscode.SymbolKind.Field,
                         location: new vscode.Location(document.uri, line.range)
                     });
+                    continue;
+                }
+                match = line.text.match(/^(  |\t)<(?<tag>GlyphOrder)>/);
+                if (match?.groups) {
+                    symbols.push({
+                        containerName: "Pseudo Table",
+                        name: "Glyph Order",
+                        kind: vscode.SymbolKind.Field,
+                        location: new vscode.Location(document.uri, line.range)
+                    });
                 }
             }
 
