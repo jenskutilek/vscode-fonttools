@@ -19,7 +19,7 @@ class TtxDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
 
             for (var i = 0; i < document.lineCount; i++) {
                 line = document.lineAt(i);
-                match = line.text.match(/\s<(?<tag>[A-Za-z0-9_ ]{1,4})>/);
+                match = line.text.match(/^(  |\t)<(?<tag>[A-Za-z0-9_ ]{1,4})>/);
                 if (match?.groups) {
                     symbols.push({
                         containerName: "SFNT Table",
