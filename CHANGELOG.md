@@ -1,9 +1,14 @@
 # Change Log
 
-All notable changes to the "fonttools" extension will be documented in this file.
+## [v0.1.2] 2021-09-08
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- Support table tags for raw "hexdata" tables
 
-## [Unreleased]
+## [v0.1.1] 2021-07-20
+
+- Include `GlyphOrder` pseudo table in document outline
+
+
+## [v0.1.0] 2021-07-19
 
 - Initial release

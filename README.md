@@ -10,9 +10,18 @@ Work in progress to add support for common font development tasks based on the P
 
 ## Release Notes
 
-### 0.1.0
+### 0.1.2
 
-Initial release of the extension.
+- Support table tags for raw "hexdata" tables
+
+## How To Build The Extension
+
+If you don’t want to use the builds from the [releases](/jenskutilek/vscode-fonttools/releases) page, you can build and install the extension yourself:
+
+```bash
+$ vsce package
+$ code --install-extension fonttools-0.1.2.vsix
+```
 
 ## Copyright
 
