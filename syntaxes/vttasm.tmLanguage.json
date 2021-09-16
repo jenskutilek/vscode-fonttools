@@ -1,0 +1,97 @@
+{
+    "name": "VTT Assembly", 
+    "fileTypes": [
+        "vttasm"
+    ], 
+    "patterns": [
+        {
+            "include": "#assembly"
+        }
+    ],
+    "scopeName": "source.assembly.vtt", 
+    "repository": {
+        "assembly": {
+            "patterns": [
+                {
+                    "include": "#VttAsmConditional"
+                },
+                {
+                    "include": "#VttAsmInstruction"
+                },
+                {
+                    "include": "#VttAsmComment"
+                },
+                {
+                    "include": "#VttAsmParams"
+                },
+                {
+                    "include": "#VttAsmNumbers"
+                },
+                {
+                    "include": "#VttAsmInstructionMeta"
+                },
+                {
+                    "include": "#VttAsmInstructionPush"
+                },
+                {
+                    "include": "#VttAsmLabel"
+                }
+            ]
+        },
+        "VttAsmInstruction": {
+            "name": "keyword.assembly.vtt",
+            "match": "\\b[A-Z][A-Z0-9]+\\b"
+        },
+        "VttAsmInstructionMeta": {
+            "name": "keyword.assembly.vtt",
+            "match": "\\b#(BEGIN|END|PUSHOFF|PUSHON)\\b"
+        },
+        "VttAsmInstructionPush": {
+            "name": "keyword.assembly.vtt",
+            "match": "\\b#PUSH\\b"
+        },
+        "VttAsmLabel": {
+            "name": "label.assembly.vtt",
+            "match": "\\b#[A-Za-z0-9]+:\\b"
+        },
+        "VttAsmConditional": {
+            "name": "keyword.control.conditional.assembly.vtt",
+            "match": "\\b(IF|ELSE|EIF)\\b"
+        },
+        "VttAsmComment": {
+            "name": "comment.block.assembly.vtt",
+            "begin": "\/\\*",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.comment.begin.assembly.vtt"
+                }
+            },
+            "end": "\\*\/",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.comment.end.assembly.vtt"
+                }
+            }
+        },
+        "VttAsmParams": {
+            "name": "constant.numeric.integer.binary.assembly.vtt",
+            "begin": "\\[",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.section.brackets.begin.assembly.vtt"
+                }
+            },
+            "end": "\\]",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.section.brackets.end.assembly.vtt"
+                }
+            }
+        },
+        "VttAsmNumbers": {
+            "name": "constant.numeric.integer.assembly.vtt",
+            "match": "\\b[0-9]+\\b"
+        }
+    }, 
+    "uuid": "84ac686e-d811-47ff-80a2-9a9552a7414e"
+}

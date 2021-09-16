@@ -44,6 +44,17 @@
                     ".ttxasm"
                 ],
                 "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "vttasm",
+                "aliases": [
+                    "VTT Assembly",
+                    "vttasm"
+                ],
+                "extensions": [
+                    ".vttasm"
+                ],
+                "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
@@ -59,6 +70,11 @@
                 "language": "ttxasm",
                 "scopeName": "source.assembly",
                 "path": "./syntaxes/ttxasm.tmLanguage.json"
+            },
+            {
+                "language": "vttasm",
+                "scopeName": "source.assembly.vtt",
+                "path": "./syntaxes/vttasm.tmLanguage.json"
             }
         ]
     },
