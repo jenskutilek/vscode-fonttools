@@ -18,7 +18,8 @@
         "Programming Languages"
     ],
     "activationEvents": [
-        "onLanguage:ttx"
+        "onLanguage:ttx",
+        "onLanguage:vttasm"
     ],
     "main": "./out/extension.js",
     "contributes": {

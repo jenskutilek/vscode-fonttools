@@ -5,12 +5,12 @@
     ], 
     "patterns": [
         {
-            "include": "#assembly"
+            "include": "#vttassembly"
         }
     ],
     "scopeName": "source.assembly.vtt", 
     "repository": {
-        "assembly": {
+        "vttassembly": {
             "patterns": [
                 {
                     "include": "#VttAsmConditional"
@@ -28,10 +28,10 @@
                     "include": "#VttAsmNumbers"
                 },
                 {
-                    "include": "#VttAsmInstructionMeta"
+                    "include": "#VttAsmInstructionPreprocessor"
                 },
                 {
-                    "include": "#VttAsmInstructionPush"
+                    "include": "#VttAsmArguments"
                 },
                 {
                     "include": "#VttAsmLabel"
@@ -40,19 +40,15 @@
         },
         "VttAsmInstruction": {
             "name": "keyword.assembly.vtt",
-            "match": "\\b[A-Z][A-Z0-9]+\\b"
+            "match": "\\b[^#][A-Z][A-Z0-9]+\\b"
         },
-        "VttAsmInstructionMeta": {
-            "name": "keyword.assembly.vtt",
-            "match": "\\b#(BEGIN|END|PUSHOFF|PUSHON)\\b"
-        },
-        "VttAsmInstructionPush": {
-            "name": "keyword.assembly.vtt",
-            "match": "\\b#PUSH\\b"
+        "VttAsmInstructionPreprocessor": {
+            "name": "meta.preprocessor",
+            "match": "(#BEGIN|#END|#PUSH|#PUSHOFF|#PUSHON)\\b"
         },
         "VttAsmLabel": {
-            "name": "label.assembly.vtt",
-            "match": "\\b#[A-Za-z0-9]+:\\b"
+            "name": "variable.annotation.assembly.vtt",
+            "match": "#[A-Za-z0-9]+:"
         },
         "VttAsmConditional": {
             "name": "keyword.control.conditional.assembly.vtt",
@@ -91,7 +87,19 @@
         "VttAsmNumbers": {
             "name": "constant.numeric.integer.assembly.vtt",
             "match": "\\b[0-9]+\\b"
+        },
+        "VttAsmArguments": {
+            "name": "meta.function.parameters.assembly.vtt",
+            "match": "(,)\\s+([0-9]+)",
+            "captures": {
+                "1": {
+                    "name": "punctuation.separator.assembly.vtt"
+                },
+                "2": {
+                    "name": "constant.numeric.integer.assembly.vtt"
+                }
+            }
         }
     }, 
-    "uuid": "84ac686e-d811-47ff-80a2-9a9552a7414e"
+    "uuid": "8dfeb98a-178e-11ec-97a2-003ee1c9d7fc"
 }
