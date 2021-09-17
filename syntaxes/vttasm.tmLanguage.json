@@ -35,6 +35,9 @@
                 },
                 {
                     "include": "#VttAsmLabel"
+                },
+                {
+                    "include": "#VttJinjaComment"
                 }
             ]
         },
@@ -97,6 +100,21 @@
                 },
                 "2": {
                     "name": "constant.numeric.integer.assembly.vtt"
+                }
+            }
+        },
+        "VttJinjaComment": {
+            "name": "comment.block.assembly.vtt",
+            "begin": "\\{#",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.comment.begin.assembly.vtt"
+                }
+            },
+            "end": "#\\}",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.comment.end.assembly.vtt"
                 }
             }
         }
