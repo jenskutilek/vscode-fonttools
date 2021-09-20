@@ -88,7 +88,8 @@
                 "scopeName": "text.xml.ttx",
                 "path": "./client/syntaxes/ttx.tmLanguage.json",
                 "embeddedLanguages": {
-                    "meta.embedded.block.assembly": "source.assembly"
+                    "meta.embedded.block.assembly": "source.assembly",
+                    "meta.embedded.block.assembly.vtt": "source.assembly.vtt"
                 }
             },
             {
