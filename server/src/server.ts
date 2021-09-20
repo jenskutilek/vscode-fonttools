@@ -19,9 +19,14 @@ import {
 	TextDocument
 } from 'vscode-languageserver-textdocument';
 
+import { completionItems } from './completions';
+import { details } from './details';
+
+
 // Create a connection for the server, using Node's IPC as a transport.
 // Also include all preview / proposed LSP features.
 const connection = createConnection(ProposedFeatures.all);
+
 
 // Create a simple text document manager.
 const documents: TextDocuments<TextDocument> = new TextDocuments(TextDocument);
@@ -29,6 +34,7 @@ const documents: TextDocuments<TextDocument> = new TextDocuments(TextDocument);
 let hasConfigurationCapability = false;
 let hasWorkspaceFolderCapability = false;
 let hasDiagnosticRelatedInformationCapability = false;
+
 
 connection.onInitialize((params: InitializeParams) => {
 	const capabilities = params.capabilities;
@@ -195,103 +201,7 @@ connection.onCompletion(
 		// The pass parameter contains the position of the text document in
 		// which code complete got requested. For the example we ignore this
 		// info and always provide the same completion items.
-		return [
-			{
-				label: 'SVTCA[Y]',
-				kind: CompletionItemKind.Text,
-				data: 1
-			},
-			{
-				label: 'SPVTCA[Y]',
-				kind: CompletionItemKind.Text,
-				data: 2
-			},
-			{
-				label: 'SFVTCA[Y]',
-				kind: CompletionItemKind.Text,
-				data: 3
-			},
-			{
-				label: 'SPVTL[r]',
-				kind: CompletionItemKind.Text,
-				data: 4
-			},
-			{
-				label: 'SFVTL[r]',
-				kind: CompletionItemKind.Text,
-				data: 5
-			},
-			{
-				label: 'MDAP[R]',
-				kind: CompletionItemKind.Text,
-				data: 6
-			},
-			{
-				label: 'IUP[Y]',
-				kind: CompletionItemKind.Text,
-				data: 7
-			},
-			{
-				label: 'SHP[2]',
-				kind: CompletionItemKind.Text,
-				data: 8
-			},
-			{
-				label: 'SHC[2]',
-				kind: CompletionItemKind.Text,
-				data: 9
-			},
-			{
-				label: 'SHZ[2]',
-				kind: CompletionItemKind.Text,
-				data: 10
-			},
-			{
-				label: 'MSIRP[M]',
-				kind: CompletionItemKind.Text,
-				data: 11
-			},
-			{
-				label: 'MIAP[R]',
-				kind: CompletionItemKind.Text,
-				data: 12
-			},
-			{
-				label: 'GC[N]',
-				kind: CompletionItemKind.Text,
-				data: 13
-			},
-			{
-				label: 'MD[N]',
-				kind: CompletionItemKind.Text,
-				data: 14
-			},
-			{
-				label: 'ROUND[Gr]',
-				kind: CompletionItemKind.Text,
-				data: 15
-			},
-			{
-				label: 'NROUND[Gr]',
-				kind: CompletionItemKind.Text,
-				data: 16
-			},
-			{
-				label: 'SDPVTL[r]',
-				kind: CompletionItemKind.Text,
-				data: 17
-			},
-			{
-				label: 'MDRP[M>RBl]',
-				kind: CompletionItemKind.Text,
-				data: 18
-			},
-			{
-				label: 'MIRP[M>RBl]',
-				kind: CompletionItemKind.Text,
-				data: 19
-			},
-		];
+		return completionItems;
 	}
 );
 
@@ -299,46 +209,11 @@ connection.onCompletion(
 // the completion list.
 connection.onCompletionResolve(
 	(item: CompletionItem): CompletionItem => {
-		if (item.data === 1) {
-			item.detail = 'Set Vectors To Coordinate Axis [Y|X]';
-			item.documentation = 'Sets the projection_vector to one of the coordinate axes depending on the value of the flag a.';
-		} else if (item.data === 2) {
-			item.detail = 'Set Projection Vector To Coordinate Axis [Y|X]';
-		} else if (item.data === 3) {
-			item.detail = 'Set Freedom Vector To Coordinate Axis [Y|X]';
-		} else if (item.data === 4) {
-			item.detail = 'Set Projection Vector To Line [r|R]';
-		} else if (item.data === 5) {
-			item.detail = 'Set Freedom Vector To Line[r|R]';
-		} else if (item.data === 6) {
-			item.detail = 'Move Direct Absolute Point [r|R]';
-		} else if (item.data === 7) {
-			item.detail = 'Interpolate Untouched Points [Y|X]';
-		} else if (item.data === 8) {
-			item.detail = 'Shift Point [2|1]';
-		} else if (item.data === 9) {
-			item.detail = 'Shift Contour[2|1]';
-		} else if (item.data === 10) {
-			item.detail = 'Shift Zone [2|1]';
-		} else if (item.data === 11) {
-			item.detail = 'Move Stack-indirect Relative Point [m|M]';
-		} else if (item.data === 12) {
-			item.detail = 'Move Indirect Absolute Point [r|R]';
-		} else if (item.data === 13) {
-			item.detail = 'Get Coordinate [N|O]';
-		} else if (item.data === 14) {
-			item.detail = 'Measure Distance [N|O]';
-		} else if (item.data === 15) {
-			item.detail = 'Round [Gr|Bl|Wh]';
-		} else if (item.data === 16) {
-			item.detail = 'No Round [Gr|Bl|Wh]';
-		} else if (item.data === 17) {
-			item.detail = 'Set Dual Projection Vector To Line [r|R]';
-		} else if (item.data === 18) {
-			item.detail = 'Move Direct Relative Point [m|M <|> r|R Gr|Bl|Wh]';
-		} else if (item.data === 19) {
-			item.detail = 'Move Indirect Relative Point [m|M <|> r|R Gr|Bl|Wh]';
-		}
+		let d = details.get(item.data);
+		if (d) {
+			item.detail = d.detail;
+			item.documentation = d.doc;
+		};
 		return item;
 	}
 );
