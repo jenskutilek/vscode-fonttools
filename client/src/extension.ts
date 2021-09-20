@@ -15,8 +15,6 @@ let client: LanguageClient;
 
 
 export function activate(context: vscode.ExtensionContext):void {
-    console.log("Activate");
-
     // https://stackoverflow.com/questions/46045245/how-to-enable-go-to-symbol-with-a-custom-language-in-vscode/46054953#46054953
     context.subscriptions.push(
         vscode.languages.registerDocumentSymbolProvider(
