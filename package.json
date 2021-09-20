@@ -22,7 +22,7 @@
         "onLanguage:ttx",
         "onLanguage:vttasm"
     ],
-    "main": "./client/out/extension",
+    "main": "./out/main",
     "contributes": {
         "languages": [
             {
@@ -81,7 +81,10 @@
         ]
     },
     "scripts": {
-        "vscode:prepublish": "npm run compile",
+        "vscode:prepublish": "npm run -S esbuild-base -- --minify",
+        "esbuild-base": "esbuild ./client/src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+        "esbuild": "npm run -S esbuild-base -- --sourcemap",
+        "esbuild-watch": "npm run -S esbuild-base -- --sourcemap --watch",
         "test-compile": "tsc -b",
         "compile": "tsc -b",
         "watch": "tsc -b -w",
