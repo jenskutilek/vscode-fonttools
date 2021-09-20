@@ -7,3 +7,5 @@ tsconfig.lsif.json
 *.db
 client/server
 .vscode-test
+/client/out/
+/server/out/
