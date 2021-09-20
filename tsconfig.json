@@ -2,12 +2,10 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "es2019",
+		"lib": ["ES2019"],
 		"outDir": "out",
-		"lib": [
-			"ES2019"
-		],
-		"sourceMap": true,
 		"rootDir": "src",
+		"sourceMap": true,
 		"strict": true   /* enable all strict type-checking options */
 		/* Additional Checks */
 		// "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */

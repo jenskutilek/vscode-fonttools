@@ -4,7 +4,7 @@
     "description": "Support for font development tools",
     "author": "Jens Kutilek",
     "publisher": "jenskutilek",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/jenskutilek/vscode-fonttools"
@@ -24,29 +24,6 @@
     ],
     "main": "./client/out/extension",
     "contributes": {
-        "configuration": {
-            "type": "object",
-            "title": "Example configuration",
-            "properties": {
-                "languageServerExample.maxNumberOfProblems": {
-                    "scope": "resource",
-                    "type": "number",
-                    "default": 100,
-                    "description": "Controls the maximum number of problems produced by the server."
-                },
-                "languageServerExample.trace.server": {
-                    "scope": "window",
-                    "type": "string",
-                    "enum": [
-                        "off",
-                        "messages",
-                        "verbose"
-                    ],
-                    "default": "off",
-                    "description": "Traces the communication between VS Code and the language server."
-                }
-            }
-        },
         "languages": [
             {
                 "id": "ttx",
@@ -57,7 +34,7 @@
                 "extensions": [
                     ".ttx"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./client/language-configuration.json"
             },
             {
                 "id": "ttxasm",
@@ -68,7 +45,7 @@
                 "extensions": [
                     ".ttxasm"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./client/language-configuration.json"
             },
             {
                 "id": "vttasm",
@@ -79,14 +56,14 @@
                 "extensions": [
                     ".vttasm"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./client/language-configuration.json"
             }
         ],
         "grammars": [
             {
                 "language": "ttx",
                 "scopeName": "text.xml.ttx",
-                "path": "./syntaxes/ttx.tmLanguage.json",
+                "path": "./client/syntaxes/ttx.tmLanguage.json",
                 "embeddedLanguages": {
                     "meta.embedded.block.assembly": "source.assembly"
                 }
@@ -94,27 +71,22 @@
             {
                 "language": "ttxasm",
                 "scopeName": "source.assembly",
-                "path": "./syntaxes/ttxasm.tmLanguage.json"
+                "path": "./client/syntaxes/ttxasm.tmLanguage.json"
             },
             {
                 "language": "vttasm",
                 "scopeName": "source.assembly.vtt",
-                "path": "./syntaxes/vttasm.tmLanguage.json"
+                "path": "./client/syntaxes/vttasm.tmLanguage.json"
             }
         ]
     },
     "scripts": {
-        "vscode:prepublish": "npm run esbuild-base -- --minify",
-        "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
-        "esbuild": "npm run esbuild-base -- --sourcemap",
-        "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
-        "test-compile": "tsc -p ./",
+        "vscode:prepublish": "npm run compile",
+        "test-compile": "tsc -b",
         "compile": "tsc -b",
         "watch": "tsc -b -w",
-        "pretest": "npm run compile && npm run lint",
-        "lint": "eslint ./client/src ./server/src src --ext ts",
-        "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
-        "test": "node ./out/test/runTest.js"
+        "lint": "eslint ./client/src ./server/src --ext .ts,.tsx",
+        "postinstall": "cd client && npm install && cd ../server && npm install && cd .."
     },
     "devDependencies": {
         "@types/glob": "^7.1.3",
@@ -127,7 +99,6 @@
         "eslint": "^7.27.0",
         "glob": "^7.1.7",
         "mocha": "^8.4.0",
-        "typescript": "^4.3.2",
-        "vscode-test": "^1.5.2"
+        "typescript": "^4.3.5"
     }
 }

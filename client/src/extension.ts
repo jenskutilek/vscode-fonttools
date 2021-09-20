@@ -1,6 +1,7 @@
 'use strict';
 import * as path from 'path';
 import * as vscode from 'vscode';
+import { TtxDocumentSymbolProvider } from './ttxsymbols';
 
 import {
     LanguageClient,
@@ -14,6 +15,14 @@ let client: LanguageClient;
 
 
 export function activate(context: vscode.ExtensionContext):void {
+    console.log("Activate");
+
+    // https://stackoverflow.com/questions/46045245/how-to-enable-go-to-symbol-with-a-custom-language-in-vscode/46054953#46054953
+    context.subscriptions.push(
+        vscode.languages.registerDocumentSymbolProvider(
+            {language: "ttx"}, new TtxDocumentSymbolProvider()
+        )
+    );
 
     // Language server for assembly commands
     // Based on https://code.visualstudio.com/api/language-extensions/language-server-extension-guide

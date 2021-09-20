@@ -1,16 +1,8 @@
-// https://stackoverflow.com/questions/46045245/how-to-enable-go-to-symbol-with-a-custom-language-in-vscode/46054953#46054953
 'use strict';
 import * as vscode from 'vscode';
 
-export function activate(context: vscode.ExtensionContext):void {
-    context.subscriptions.push(
-        vscode.languages.registerDocumentSymbolProvider(
-            {language: "ttx"}, new TtxDocumentSymbolProvider()
-        )
-    );
-}
 
-class TtxDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
+export class TtxDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
     public provideDocumentSymbols(document: vscode.TextDocument,
         token: vscode.CancellationToken): Thenable<vscode.SymbolInformation[]> {
         return new Promise((resolve, reject) => {
