@@ -34,7 +34,13 @@
                     "include": "#VttAsmArguments"
                 },
                 {
+                    "include": "#VttAsmLabelDefinition"
+                },
+                {
                     "include": "#VttAsmLabel"
+                },
+                {
+                    "include": "#VttAsmLabelArgument"
                 },
                 {
                     "include": "#VttJinjaComment"
@@ -43,15 +49,19 @@
         },
         "VttAsmInstruction": {
             "name": "keyword.assembly.vtt",
-            "match": "\\b[^#][A-Z][A-Z0-9]+\\b"
+            "match": "\\b([^#\\[][A-Z0-9]+)\\b"
         },
         "VttAsmInstructionPreprocessor": {
             "name": "meta.preprocessor",
             "match": "(#BEGIN|#END|#PUSH|#PUSHOFF|#PUSHON)\\b"
         },
-        "VttAsmLabel": {
-            "name": "variable.annotation.assembly.vtt",
+        "VttAsmLabelDefinition": {
+            "name": "variable.other.constant.assembly.vtt",
             "match": "#[A-Za-z0-9]+:"
+        },
+        "VttAsmLabel": {
+            "name": "variable.other.constant.assembly.vtt",
+            "match": "[A-Za-z0-9]+"
         },
         "VttAsmConditional": {
             "name": "keyword.control.conditional.assembly.vtt",
@@ -73,17 +83,16 @@
             }
         },
         "VttAsmParams": {
-            "name": "constant.numeric.integer.binary.assembly.vtt",
-            "begin": "\\[",
-            "beginCaptures": {
-                "0": {
-                    "name": "punctuation.section.brackets.begin.assembly.vtt"
-                }
-            },
-            "end": "\\]",
-            "endCaptures": {
-                "0": {
-                    "name": "punctuation.section.brackets.end.assembly.vtt"
+            "match": "(\\[)([A-Za-z0-9&;]*)(\\])",
+            "captures": {
+                "1": {
+                    "name": "punctuation.separator.brackets.begin.assembly.vtt"
+                },
+                "2": {
+                    "name": "variable.parameter.vtt"
+                },
+                "3": {
+                    "name": "punctuation.separator.brackets.end.assembly.vtt"
                 }
             }
         },
@@ -100,6 +109,26 @@
                 },
                 "2": {
                     "name": "constant.numeric.integer.assembly.vtt"
+                }
+            }
+        },
+        "VttAsmLabelArgument": {
+            "match": "(\\()([A-Za-z0-9]+)(=)(#[A-Za-z0-9]+)(\\))",
+            "captures": {
+                "1": {
+                    "name": "punctuation.separator.parens.begin.assembly.vtt"
+                },
+                "2": {
+                    "name": "variable.other.constant.assembly.vtt"
+                },
+                "3": {
+                    "name": "keyword.operator.assignment.assembly.vtt"
+                },
+                "4": {
+                    "name": "variable.other.constant.assembly.vtt"
+                },
+                "5": {
+                    "name": "punctuation.separator.parens.end.assembly.vtt"
                 }
             }
         },
