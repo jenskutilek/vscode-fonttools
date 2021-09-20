@@ -26,11 +26,11 @@ export let details = new Map([
 	}],
 	[0x64, {
 		detail: 'Absolute',
-		doc: 'Pops: 1, pushes: 1.'
+		doc: 'Pops: 1, pushes: 1.\nPops n off the stack and pushes onto the stack the absolute value of n.'
 	}],
 	[0x60, {
 		detail: 'Add',
-		doc: 'Pops: 2, pushes: 1.'
+		doc: 'Pops: 2, pushes: 1.\nPops n1 and n2 off the stack and pushes the sum of the two elements onto the stack.'
 	}],
 	[0x27, {
 		detail: 'Align Points',
@@ -50,7 +50,7 @@ export let details = new Map([
 	}],
 	[0x67, {
 		detail: 'Ceiling',
-		doc: 'Pops: 1, pushes: 1.'
+		doc: 'Pops: 1, pushes: 1.\nPops n1 and returns n, the least integer value greater than or equal to n1. For instance, the ceiling of 15 is 15, but the ceiling of 15.3 is 16. The ceiling of -0.8 is 0. (n is the least integer value greater than or equal to n1).'
 	}],
 	[0x25, {
 		detail: 'Copy X To Top Stack',
@@ -89,12 +89,12 @@ export let details = new Map([
 		doc: 'Pops: -1.'
 	}],
 	[0x24, {
-		detail: 'Get Depth Stack',
+		detail: 'Get Depth Of Stack',
 		doc: 'Pops: 0, pushes: 1.'
 	}],
 	[0x62, {
 		detail: 'Divide',
-		doc: 'Pops: 2, pushes: 1.'
+		doc: 'Pops: 2, pushes: 1.\nPops n1 and n2 off the stack and pushes onto the stack the quotient obtained by dividing n2 by n1. Note that this truncates rather than rounds the value. The TrueType Rasterizer v.1.7 and later will catch any division-by-zero errors.'
 	}],
 	[0x20, {
 		detail: 'Duplicate Top Stack',
@@ -146,7 +146,7 @@ export let details = new Map([
 	}],
 	[0x66, {
 		detail: 'Floor',
-		doc: 'Pops: 1, pushes: 1.'
+		doc: 'Pops: 1, pushes: 1.\nPops n1 and returns n, the greatest integer value less than or equal to n1.'
 	}],
 	[0x46, {
 		detail: 'Get Coordinate On Projection Vector [N|O]',
@@ -226,7 +226,7 @@ export let details = new Map([
 	}],
 	[0x8b, {
 		detail: 'Maximum',
-		doc: 'Pops: 2, pushes: 1.'
+		doc: 'Pops: 2, pushes: 1.\nPops two elements, e1 and e2, from the stack and pushes the larger of these two quantities onto the stack.'
 	}],
 	[0x49, {
 		detail: 'Measure Distance [N|O]',
@@ -246,7 +246,7 @@ export let details = new Map([
 	}],
 	[0x8c, {
 		detail: 'Minimum',
-		doc: 'Pops: 2, pushes: 1.'
+		doc: 'Pops: 2, pushes: 1.\nPops two elements, e1 and e2, from the stack and pushes the smaller of these two quantities onto the stack.'
 	}],
 	[0x26, {
 		detail: 'Move X To Top Stack',
@@ -270,11 +270,11 @@ export let details = new Map([
 	}],
 	[0x63, {
 		detail: 'Multiply',
-		doc: 'Pops: 2, pushes: 1.'
+		doc: 'Pops: 2, pushes: 1.\nPops n1 and n2 off the stack and pushes onto the stack the product of the two elements.'
 	}],
 	[0x65, {
 		detail: 'Negate',
-		doc: 'Pops: 1, pushes: 1.'
+		doc: 'Pops: 1, pushes: 1.\nThis instruction pops n1 off the stack and pushes onto the stack the negated value of n1.'
 	}],
 	[0x55, {
 		detail: 'Not Equal',
@@ -454,7 +454,7 @@ export let details = new Map([
 	}],
 	[0x61, {
 		detail: 'Subtract',
-		doc: 'Pops: 2, pushes: 1.'
+		doc: 'Pops: 2, pushes: 1.\nPops n1 and n2 off the stack and pushes the difference (n2-n1) between the two elements onto the stack.'
 	}],
 	[0x0, {
 		detail: 'Set Freedom And Projection Vectors To Coordinate Axis [Y|X]',

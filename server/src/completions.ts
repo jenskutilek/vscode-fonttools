@@ -32,22 +32,22 @@ export let completionItems = [
     // "normal" instructions
 
 	{
-		label: 'AA[]',
+		label: 'AA[], a',
 		kind: CompletionItemKind.Text,
 		data: 0x7f
 	},
 	{
-		label: 'ABS[]',
+		label: 'ABS[], n',
 		kind: CompletionItemKind.Text,
 		data: 0x64
 	},
 	{
-		label: 'ADD[]',
+		label: 'ADD[], n1, n2',
 		kind: CompletionItemKind.Text,
 		data: 0x60
 	},
 	{
-		label: 'ALIGNPTS[]',
+		label: 'ALIGNPTS[], a, b',
 		kind: CompletionItemKind.Text,
 		data: 0x27
 	},
@@ -57,22 +57,22 @@ export let completionItems = [
 		data: 0x3c
 	},
 	{
-		label: 'AND[]',
+		label: 'AND[], a, b',
 		kind: CompletionItemKind.Text,
 		data: 0x5a
 	},
 	{
-		label: 'CALL[]',
+		label: 'CALL[], function_index',
 		kind: CompletionItemKind.Text,
 		data: 0x2b
 	},
 	{
-		label: 'CEILING[]',
+		label: 'CEILING[], n1',
 		kind: CompletionItemKind.Text,
 		data: 0x67
 	},
 	{
-		label: 'CINDEX[]',
+		label: 'CINDEX[], a',
 		kind: CompletionItemKind.Text,
 		data: 0x25
 	},
@@ -82,7 +82,7 @@ export let completionItems = [
 		data: 0x22
 	},
 	{
-		label: 'DEBUG[]',
+		label: 'DEBUG[], a',
 		kind: CompletionItemKind.Text,
 		data: 0x4f
 	},
@@ -122,12 +122,12 @@ export let completionItems = [
 		data: 0x24
 	},
 	{
-		label: 'DIV[]',
+		label: 'DIV[], n1, n2',
 		kind: CompletionItemKind.Text,
 		data: 0x62
 	},
 	{
-		label: 'DUP[]',
+		label: 'DUP[], a',
 		kind: CompletionItemKind.Text,
 		data: 0x20
 	},
@@ -147,12 +147,12 @@ export let completionItems = [
 		data: 0x2d
 	},
 	{
-		label: 'EQ[]',
+		label: 'EQ[], a, b',
 		kind: CompletionItemKind.Text,
 		data: 0x54
 	},
 	{
-		label: 'EVEN[]',
+		label: 'EVEN[], a',
 		kind: CompletionItemKind.Text,
 		data: 0x57
 	},
@@ -187,7 +187,7 @@ export let completionItems = [
 		data: 0x81
 	},
 	{
-		label: 'FLOOR[]',
+		label: 'FLOOR[], n1',
 		kind: CompletionItemKind.Text,
 		data: 0x66
 	},
@@ -287,7 +287,7 @@ export let completionItems = [
 		data: 0x51
 	},
 	{
-		label: 'MAX[]',
+		label: 'MAX[], e1, e2',
 		kind: CompletionItemKind.Text,
 		data: 0x8b
 	},
@@ -312,7 +312,7 @@ export let completionItems = [
 		data: 0x3e
 	},
 	{
-		label: 'MIN[]',
+		label: 'MIN[], e1, e2',
 		kind: CompletionItemKind.Text,
 		data: 0x8c
 	},
@@ -342,12 +342,12 @@ export let completionItems = [
 		data: 0x3a
 	},
 	{
-		label: 'MUL[]',
+		label: 'MUL[], n1, n2',
 		kind: CompletionItemKind.Text,
 		data: 0x63
 	},
 	{
-		label: 'NEG[]',
+		label: 'NEG[], n1',
 		kind: CompletionItemKind.Text,
 		data: 0x65
 	},
@@ -572,7 +572,7 @@ export let completionItems = [
 		data: 0x1e
 	},
 	{
-		label: 'SUB[]',
+		label: 'SUB[], n1, n2',
 		kind: CompletionItemKind.Text,
 		data: 0x61
 	},
