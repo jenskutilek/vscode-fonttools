@@ -40,6 +40,53 @@
             ]
         },
         {
+            "name": "meta.embedded.block.assembly.vtt",
+            "begin": "(<)(extraProgram|glyphProgram)( name)=((\").+(\"))(>)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.begin.xml"
+                },
+                "2": {
+                    "name": "entity.name.tag.localname.xml"
+                },
+                "3": {
+                    "name": "entity.other.attribute-name.localname.xml"
+                },
+                "4": {
+                    "name": "string.quoted.double.xml"
+                },
+                "5": {
+                    "name": "punctuation.definition.string.begin.xml"
+                },
+                "6": {
+                    "name": "punctuation.definition.string.end.xml"
+                },
+                "7": {
+                    "name": "punctuation.definition.tag.end.xml"
+                }
+            }, 
+            "end": "(<)(/)(extraProgram|glyphProgram)(>)",
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.begin.xml"
+                },
+                "2": {
+                    "name": "punctuation.definition.tag.xml"
+                },
+                "3": {
+                    "name": "entity.name.tag.localname.xml"
+                },
+                "4": {
+                    "name": "punctuation.definition.tag.end.xml"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.assembly.vtt"
+                }
+            ]
+        },
+        {
             "include": "text.xml"
         }
     ], 
