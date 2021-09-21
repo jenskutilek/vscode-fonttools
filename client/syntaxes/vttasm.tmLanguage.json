@@ -49,7 +49,7 @@
         },
         "VttAsmInstruction": {
             "name": "keyword.assembly.vtt",
-            "match": "\\b([^#\\[][A-Z0-9]+)\\b"
+            "match": "\\b([^#\\[\\(][A-Z][A-Z0-9]*)\\b"
         },
         "VttAsmInstructionPreprocessor": {
             "name": "meta.preprocessor",
