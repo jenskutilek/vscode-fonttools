@@ -42,12 +42,12 @@ export let completionItems = [
 		data: 0x64
 	},
 	{
-		label: 'ADD[], n1, n2',
+		label: 'ADD[], n2, n1',
 		kind: CompletionItemKind.Text,
 		data: 0x60
 	},
 	{
-		label: 'ALIGNPTS[], a, b',
+		label: 'ALIGNPTS[], p2, p1',
 		kind: CompletionItemKind.Text,
 		data: 0x27
 	},
@@ -57,7 +57,7 @@ export let completionItems = [
 		data: 0x3c
 	},
 	{
-		label: 'AND[], a, b',
+		label: 'AND[], e2, e1',
 		kind: CompletionItemKind.Text,
 		data: 0x5a
 	},
@@ -72,7 +72,7 @@ export let completionItems = [
 		data: 0x67
 	},
 	{
-		label: 'CINDEX[], a',
+		label: 'CINDEX[], k',
 		kind: CompletionItemKind.Text,
 		data: 0x25
 	},
@@ -82,7 +82,7 @@ export let completionItems = [
 		data: 0x22
 	},
 	{
-		label: 'DEBUG[], a',
+		label: 'DEBUG[], number',
 		kind: CompletionItemKind.Text,
 		data: 0x4f
 	},
@@ -122,12 +122,12 @@ export let completionItems = [
 		data: 0x24
 	},
 	{
-		label: 'DIV[], n1, n2',
+		label: 'DIV[], n2, n1',
 		kind: CompletionItemKind.Text,
 		data: 0x62
 	},
 	{
-		label: 'DUP[], a',
+		label: 'DUP[], e',
 		kind: CompletionItemKind.Text,
 		data: 0x20
 	},
@@ -147,12 +147,12 @@ export let completionItems = [
 		data: 0x2d
 	},
 	{
-		label: 'EQ[], a, b',
+		label: 'EQ[], e2, e1',
 		kind: CompletionItemKind.Text,
 		data: 0x54
 	},
 	{
-		label: 'EVEN[], a',
+		label: 'EVEN[], e1',
 		kind: CompletionItemKind.Text,
 		data: 0x57
 	},
@@ -192,7 +192,7 @@ export let completionItems = [
 		data: 0x66
 	},
 	{
-		label: 'GC[N]',
+		label: 'GC[N], p',
 		kind: CompletionItemKind.Text,
 		data: 0x46
 	},
@@ -232,7 +232,7 @@ export let completionItems = [
 		data: 0x89
 	},
 	{
-		label: 'IF[]',
+		label: 'IF[], *',
 		kind: CompletionItemKind.Text,
 		data: 0x58
 	},
@@ -257,17 +257,17 @@ export let completionItems = [
 		data: 0x30
 	},
 	{
-		label: 'JMPR[]',
+		label: 'JMPR[], offset',
 		kind: CompletionItemKind.Text,
 		data: 0x1c
 	},
 	{
-		label: 'JROF[]',
+		label: 'JROF[], offset, b',
 		kind: CompletionItemKind.Text,
 		data: 0x79
 	},
 	{
-		label: 'JROT[]',
+		label: 'JROT[], offset, b',
 		kind: CompletionItemKind.Text,
 		data: 0x78
 	},
@@ -287,12 +287,12 @@ export let completionItems = [
 		data: 0x51
 	},
 	{
-		label: 'MAX[], e1, e2',
+		label: 'MAX[], e2, e1',
 		kind: CompletionItemKind.Text,
 		data: 0x8b
 	},
 	{
-		label: 'MD[N]',
+		label: 'MD[N], p2, p1',
 		kind: CompletionItemKind.Text,
 		data: 0x49
 	},
@@ -312,7 +312,7 @@ export let completionItems = [
 		data: 0x3e
 	},
 	{
-		label: 'MIN[], e1, e2',
+		label: 'MIN[], e2, e1',
 		kind: CompletionItemKind.Text,
 		data: 0x8c
 	},
@@ -342,7 +342,7 @@ export let completionItems = [
 		data: 0x3a
 	},
 	{
-		label: 'MUL[], n1, n2',
+		label: 'MUL[], n2, n1',
 		kind: CompletionItemKind.Text,
 		data: 0x63
 	},
@@ -382,7 +382,7 @@ export let completionItems = [
 		data: 0x21
 	},
 	{
-		label: 'RCVT[]',
+		label: 'RCVT[], location',
 		kind: CompletionItemKind.Text,
 		data: 0x45
 	},
@@ -452,7 +452,7 @@ export let completionItems = [
 		data: 0x8d
 	},
 	{
-		label: 'SCFS[]',
+		label: 'SCFS[], p, value',
 		kind: CompletionItemKind.Text,
 		data: 0x48
 	},
@@ -572,7 +572,7 @@ export let completionItems = [
 		data: 0x1e
 	},
 	{
-		label: 'SUB[], n1, n2',
+		label: 'SUB[], n2, n1',
 		kind: CompletionItemKind.Text,
 		data: 0x61
 	},
@@ -612,12 +612,12 @@ export let completionItems = [
 		data: 0x29
 	},
 	{
-		label: 'WCVTF[]',
+		label: 'WCVTF[], location, value',
 		kind: CompletionItemKind.Text,
 		data: 0x70
 	},
 	{
-		label: 'WCVTP[]',
+		label: 'WCVTP[], location, value',
 		kind: CompletionItemKind.Text,
 		data: 0x44
 	},
