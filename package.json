@@ -4,7 +4,7 @@
     "description": "Support for font development tools",
     "author": "Jens Kutilek",
     "publisher": "jenskutilek",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "repository": {
         "type": "git",
         "url": "https://github.com/jenskutilek/vscode-fonttools"
@@ -106,7 +106,7 @@
     },
     "scripts": {
         "vscode:prepublish": "npm run -S esbuild-base -- --minify",
-        "esbuild-base": "esbuild ./client/src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+        "esbuild-base": "esbuild ./client/src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node && esbuild ./server/src/server.ts --bundle --outfile=server/out/server.js --external:vscode --format=cjs --platform=node",
         "esbuild": "npm run -S esbuild-base -- --sourcemap",
         "esbuild-watch": "npm run -S esbuild-base -- --sourcemap --watch",
         "test-compile": "tsc -b",
