@@ -19,11 +19,11 @@ Work in progress to add support for common font development tasks based on the P
 
 ## How To Build The Extension
 
-If you don’t want to use the builds from the [releases](/jenskutilek/vscode-fonttools/releases) page, you can build and install the extension yourself:
+If you don’t want to install the extension through the VisualStudio marketplace,you can build and install it from the source code:
 
 ```bash
 $ vsce package
-$ code --install-extension fonttools-0.2.2.vsix
+$ code --install-extension fonttools-0.2.3.vsix
 ```
 
 ## Copyright
