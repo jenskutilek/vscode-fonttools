@@ -13,11 +13,9 @@ Work in progress to add support for common font development tasks based on the P
 
 ## Release Notes
 
-### 0.2.2
+### 0.2.3
 
-- Add syntax for Visual TrueType assembly
-- Add completions for all TrueType instructions
-- Add arguments documentation for some instructions
+- Add more details to completions
 
 ## How To Build The Extension
 

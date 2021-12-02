@@ -1,5 +1,9 @@
 # Change Log
 
+## [v0.2.3] 2021-12-02
+
+- Add more details to completions
+
 ## [v0.2.2] 2021-09-22
 
 - Add syntax for Visual TrueType assembly
