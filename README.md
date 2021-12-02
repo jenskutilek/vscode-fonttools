@@ -19,7 +19,7 @@ Work in progress to add support for common font development tasks based on the P
 
 ## How To Build The Extension
 
-If you don’t want to install the extension through the VisualStudio marketplace,you can build and install it from the source code:
+If you don’t want to install the extension through the VisualStudio marketplace, you can build and install it from the source code:
 
 ```bash
 $ vsce package
