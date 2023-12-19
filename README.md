@@ -13,19 +13,20 @@ Work in progress to add support for common font development tasks based on the P
 
 ## Release Notes
 
-### 0.2.3
+### 0.3.0
 
-- Add more details to completions
+- Add a formatter for TTX and VTT assembly. Press `opt-shift-F` to reindent a source file.
 
 ## How To Build The Extension
 
 If you don’t want to install the extension through the VisualStudio marketplace, you can build and install it from the source code:
 
 ```bash
+$ npm install -g @vscode/vsce
 $ vsce package
-$ code --install-extension fonttools-0.2.3.vsix
+$ code --install-extension fonttools-0.3.0.vsix
 ```
 
 ## Copyright
 
-© 2021 by Jens Kutilek.
+© 2021-2023 by [Jens Kutilek](https://www.kutilek.de/).

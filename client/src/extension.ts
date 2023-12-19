@@ -2,6 +2,7 @@
 import * as path from 'path';
 import * as vscode from 'vscode';
 import { TtxDocumentSymbolProvider } from './ttxsymbols';
+import { VttAsmFormatter } from './vttformatter';
 
 import {
     LanguageClient,
@@ -19,6 +20,16 @@ export function activate(context: vscode.ExtensionContext):void {
     context.subscriptions.push(
         vscode.languages.registerDocumentSymbolProvider(
             {language: "ttx"}, new TtxDocumentSymbolProvider()
+        )
+    );
+    context.subscriptions.push(
+        vscode.languages.registerDocumentFormattingEditProvider(
+            {language: 'ttxasm'}, new VttAsmFormatter()
+        )
+    );
+    context.subscriptions.push(
+        vscode.languages.registerDocumentFormattingEditProvider(
+            {language: 'vttasm'}, new VttAsmFormatter()
         )
     );
 

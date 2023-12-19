@@ -1,5 +1,9 @@
 # Change Log
 
+## [v0.3.0] 2023-12-19
+
+- Add a formatter for TTX and VTT assembly. Press `opt-shift-F` to reindent a source file.
+
 ## [v0.2.3] 2021-12-02
 
 - Add more details to completions
