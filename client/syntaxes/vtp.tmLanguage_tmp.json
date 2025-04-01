@@ -1,0 +1,258 @@
+{
+    "name": "VOLT Project", 
+    "fileTypes": [
+        "vtp"
+    ], 
+    "patterns": [
+        {
+            "include": "#voltproject"
+        }
+    ],
+    "scopeName": "source.voltproject",
+    "repository": {
+        "voltproject": {
+            "patterns": [
+                {
+                    "include": "#VtpGlyphDefinitions"
+                },
+                {
+                    "include": "#VtpScriptDefinitions"
+                },
+                {
+                    "include": "#VtpKeywords"
+                },
+                {
+                    "include": "#VtpNumbers"
+                },
+                {
+                    "include": "#VtpStrings"
+                }
+            ]
+        },
+        "VtpAnchorDefinitions": {
+            "name": "keyword.definition.anchor.voltproject",
+            "begin": "\\bDEF_ANCHOR\\b",
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.definition.begin.voltproject"
+                }
+            },
+            "end": "\\bEND_ANCHOR\\b",
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.definition.end.voltproject"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#VtpNumbers"
+                },
+                {
+                    "include": "#VtpStrings"
+                }
+            ]
+        },
+        "VtpGlyphDefinitions": {
+            "name": "keyword.definition.glyph.voltproject",
+            "begin": "\\bDEF_GLYPH\\b",
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.definition.begin.voltproject"
+                }
+            },
+            "end": "\\bEND_GLYPH\\b",
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.definition.end.voltproject"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#VtpNumbers"
+                },
+                {
+                    "include": "#VtpStrings"
+                }
+            ]
+        },
+        "VtpGroupDefinitions": {
+            "name": "keyword.definition.group.voltproject",
+            "begin": "\\bDEF_GROUP\\b",
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.definition.begin.voltproject"
+                }
+            },
+            "end": "\\bEND_GROUP\\b",
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.definition.end.voltproject"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#VtpNumbers"
+                },
+                {
+                    "include": "#VtpStrings"
+                }
+            ]
+        },
+        "VtpFeatureDefinitions": {
+            "name": "keyword.definition.feature.voltproject",
+            "begin": "\\bDEF_FEATURE\\b",
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.definition.begin.voltproject"
+                }
+            },
+            "end": "\\bEND_FEATURE\\b",
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.definition.end.voltproject"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#VtpNumbers"
+                },
+                {
+                    "include": "#VtpStrings"
+                }
+            ]
+        },
+        "VtpLangsysDefinitions": {
+            "name": "keyword.definition.langsys.voltproject",
+            "begin": "\\bDEF_LANGSYS\\b",
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.definition.begin.voltproject"
+                }
+            },
+            "end": "\\bEND_LANGSYS\\b",
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.definition.end.voltproject"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#VtpFeatureDefinitions"
+                }
+            ]
+        },
+        "VtpLookupDefinitions": {
+            "name": "keyword.definition.lookup.voltproject",
+            "begin": "\\bDEF_LOOKUP\\b",
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.definition.begin.voltproject"
+                }
+            },
+            "end": "\\bEND_LOOKUP\\b",
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.definition.end.voltproject"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#VtpNumbers"
+                },
+                {
+                    "include": "#VtpStrings"
+                }
+            ]
+        },
+        "VtpLookupContextDefinitions": {
+            "name": "keyword.definition.lookupcontext.voltproject",
+            "begin": "\\bIN_CONTEXT\\b",
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.definition.begin.voltproject"
+                }
+            },
+            "end": "\\bEND_CONTEXT\\b",
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.definition.end.voltproject"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#VtpNumbers"
+                },
+                {
+                    "include": "#VtpStrings"
+                }
+            ]
+        },
+        "VtpScriptDefinitions": {
+            "name": "keyword.definition.script.voltproject",
+            "begin": "\\bDEF_SCRIPT\\b",
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.definition.begin.voltproject"
+                }
+            },
+            "end": "\\bEND_SCRIPT\\b",
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.definition.end.voltproject"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#VtpLangsysDefinitions"
+                }
+            ]
+        },
+        "VtpSubstitutionDefinitions": {
+            "name": "keyword.definition.substitution.voltproject",
+            "begin": "\\bAS_SUBSTITUTION\\b",
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.definition.begin.voltproject"
+                }
+            },
+            "end": "\\bEND_SUBSTITUTION\\b",
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.definition.end.voltproject"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#VtpNumbers"
+                },
+                {
+                    "include": "#VtpStrings"
+                }
+            ]
+        },
+        "VtpKeywords": {
+            "name": "keyword.voltproject",
+            "match": "\\b[A-Z_]+\\b"
+        },
+        "VtpNumbers": {
+            "name": "constant.numeric.decimal.voltproject",
+            "match": "\\b(-?[0-9]+)\\b"
+        },
+        "VtpStrings": {
+            "name": "string.quoted.double.voltproject",
+            "begin": "\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.voltproject"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.voltproject"
+                }
+            }
+        }
+    }, 
+    "uuid": "6AE1B764-2F8D-4AF4-82DD-9AA9641F02AD"
+}
