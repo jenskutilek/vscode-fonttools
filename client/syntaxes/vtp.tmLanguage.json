@@ -1,0 +1,58 @@
+{
+    "name": "VOLT Project", 
+    "fileTypes": [
+        "vtp"
+    ], 
+    "patterns": [
+        {
+            "include": "#voltproject"
+        }
+    ],
+    "scopeName": "source.voltproject",
+    "repository": {
+        "voltproject": {
+            "patterns": [
+                {
+                    "include": "#VtpKeywords"
+                },
+                {
+                    "include": "#VtpProperties"
+                },
+                {
+                    "include": "#VtpNumbers"
+                },
+                {
+                    "include": "#VtpStrings"
+                }
+            ]
+        },
+        "VtpKeywords": {
+            "name": "keyword.voltproject",
+            "match": "\\b(DEF_GLYPH|ID|UNICODE|UNICODEVALUES|COMPONENTS|TYPE|END_GLYPH|DEF_SCRIPT|END_SCRIPT|DEF_LANGSYS|END_LANGSYS|DEF_FEATURE|LOOKUP|END_FEATURE|DEF_GROUP|ENUM|END_GROUP|DEF_LOOKUP|PROCESS_BASE|PROCESS_MARKS|SKIP_MARKS|DIRECTION|IN_CONTEXT|LEFT|RIGHT|END_CONTEXT|AS_SUBSTITUTION|END_SUBSTITUTION|SUB|WITH|END_SUB|AS_POSITION|ADJUST_PAIR|ADJUST_SINGLE|FIRST|SECOND|BY|POS|ADV|END_POS|END_ADJUST|ATTACH|END_ATTACH|END_POSITION|DEF_ANCHOR|ON|COMPONENT|AT|END_ANCHOR|GRID_PPEM|PRESENTATION_PPEM|PPOSITIONING_PPEM|COMPILER_USEEXTENSIONLOOKUPS|COMPILER_USEPAIRPOSFORMAT2|CMAP_FORMAT|END)\\b"
+        },
+        "VtpProperties": {
+            "name": "constant.voltproject",
+            "match": "\\b(BASE|MARK|LIGATURE|NAME|TAG|ALL|LTR|RTL|GLYPH|GROUP|RANGE|TO|DX|DY)\\b"
+        },
+        "VtpNumbers": {
+            "name": "constant.numeric.decimal.voltproject",
+            "match": "\\b(-?[0-9]+)\\b"
+        },
+        "VtpStrings": {
+            "name": "string.quoted.double.voltproject",
+            "begin": "\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.voltproject"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.voltproject"
+                }
+            }
+        }
+    }, 
+    "uuid": "6AE1B764-2F8D-4AF4-82DD-9AA9641F02AD"
+}

@@ -80,6 +80,17 @@
                     ".vttasm"
                 ],
                 "configuration": "./client/language-configuration.json"
+            },
+            {
+                "id": "vtp",
+                "aliases": [
+                    "VOLT Project",
+                    "vtp"
+                ],
+                "extensions": [
+                    ".vtp"
+                ],
+                "configuration": "./client/language-configuration-vtp.json"
             }
         ],
         "grammars": [
@@ -96,6 +107,11 @@
                 "language": "ttxasm",
                 "scopeName": "source.assembly",
                 "path": "./client/syntaxes/ttxasm.tmLanguage.json"
+            },
+            {
+                "language": "vtp",
+                "scopeName": "source.voltproject",
+                "path": "./client/syntaxes/vtp.tmLanguage.json"
             },
             {
                 "language": "vttasm",
